@@ -9,6 +9,11 @@ html, body, h1, p {
   padding: 0px;
 }
 
+:root {
+  --background-width: min(40vw, 640px);
+  --main-width: calc(100vw - var(--background-width));
+}
+
 p {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -21,7 +26,7 @@ body {
   background-image: url(imgs/background-small.jpg);
   background-size: cover;
   height: 100vh;
-  width: 40vw;
+  width: var(--background-width);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -32,7 +37,7 @@ body {
 }
 
 .logo-box {
-  margin-top: 30vh;
+  margin-top: 20vh;
   background-color: rgba(0, 0, 0, 0.39);
   text-align: center;
   padding: 10px;
@@ -53,7 +58,7 @@ body {
 }
 
 footer p {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.808);
   text-align: center;
   margin-bottom: 10px;
@@ -63,8 +68,8 @@ footer a {
 }
 
 main {
-  width: 60vw;
-  padding-top: 20vh;
+  width: var(--main-width);
+  padding-top: 15vh;
   background-color: whitesmoke;
 }
 
@@ -77,6 +82,7 @@ main > div {
 }
 
 .upper-text p {
+  max-width: 600px;
   margin-bottom: 20px;
   font-weight: bold;
   font-size: 1.2em;
