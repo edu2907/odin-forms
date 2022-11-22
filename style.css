@@ -80,6 +80,7 @@ main > div {
 
 .upper-text{
   padding-right: 50px;
+  margin-bottom: 50px;
 }
 
 .upper-text p {
@@ -93,6 +94,51 @@ form {
   background-color: white;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.112);
   padding: 15px 30px;
+}
+
+form h1 {
+  color: rgb(61, 61, 61);
+  font-size: 1.5em;
+  margin-bottom: 20px;  
+}
+
+.form-camps {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 50px;
+}
+
+.form-camps div {
+  flex-basis: 40%;
+  min-width: 165px;
+  max-width: 300px;
+}
+
+.camp {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.camp label {
+  display: block;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: rgb(83, 83, 83);
+  letter-spacing: 1.5px;
+}
+
+.camp input {
+  width: 100%;
+  max-width: 300px;
+  height: 25px;
+  border: 2px solid #E5E7EB;
+  border-radius: 4px;
+}
+
+.camp input:focus {
+  outline: none;
+  border: 2px solid #149ceb;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.185);
 }
 
 .bottom-links{
