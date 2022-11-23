@@ -1,26 +1,24 @@
-const passwordField = document.querySelector('#password');
+const passwordFields = Array.from(document.querySelectorAll('input[type=password]'));
 const passwordErrorMessage = document.querySelector('.error+span')
-const confirmPasswordField = document.querySelector('#confirm-password');
 
 function comparePasswords() {
-  return (passwordField.value == confirmPasswordField.value) && (passwordField.value != '' && confirmPasswordField.value != '');
+  return passwordFields[0].value == passwordFields[1].value  && passwordFields.every(field => field.value != '');
 }
 
 function updateFieldValidity() {
   if (comparePasswords()) {
-    passwordField.classList.remove('error');
-    passwordField.classList.add('valid');
-    confirmPasswordField.classList.remove('error');
-    confirmPasswordField.classList.add('valid');
+    passwordFields.forEach(field => {
+      field.classList.add('valid');
+      field.classList.remove('error');
+    })
     passwordErrorMessage.textContent = '';
   } else {
-    passwordField.classList.remove('valid');
-    passwordField.classList.add('error');
-    confirmPasswordField.classList.remove('valid');
-    confirmPasswordField.classList.add('error');
+    passwordFields.forEach(field => {
+      field.classList.add('error');
+      field.classList.remove('valid');
+    })
     passwordErrorMessage.textContent = '* Passwords do not match';
   }
 }
 
-passwordField.addEventListener("input", updateFieldValidity);
-confirmPasswordField.addEventListener("input", updateFieldValidity);
+passwordFields.forEach((field) => field.addEventListener("input", updateFieldValidity));

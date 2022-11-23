@@ -4,6 +4,8 @@
   src: url(fonts/norse-bold-webfont.woff) format('woff');
 }
 
+/* General */
+
 html, body, h1, p {
   margin: 0px;
   padding: 0px;
@@ -21,9 +23,13 @@ html, body, h1, p {
 
 body {
   display: flex;
+  min-height: 100vh;
 }
 
+/* Aside Background */
+
 .aside-background {
+  position: fixed;
   background-image: url(imgs/background-small.jpg);
   background-size: cover;
   height: 100vh;
@@ -68,8 +74,11 @@ footer a {
   color: inherit;
 }
 
+/* Main General */
+
 main {
   width: var(--main-width);
+  margin-left: var(--background-width);
   padding-top: 15vh;
   background-color: whitesmoke;
 }
@@ -77,6 +86,8 @@ main {
 main > div {
   padding-left: 35px;
 }
+
+/* Upper Text */
 
 .upper-text{
   padding-right: 50px;
@@ -89,6 +100,8 @@ main > div {
   font-weight: bold;
   font-size: 1.2em;
 }
+
+/* Form General */
 
 form {
   background-color: white;
@@ -141,6 +154,8 @@ form h1 {
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.185);
 }
 
+/* Password Validation */
+
 .error+span {
   color: #dd1313;
   font-size: 0.7em;
@@ -153,6 +168,8 @@ input.error {
 input.valid {
   border: 2px solid #13dd13;
 }
+
+/* Bottom links */
 
 .bottom-links{
   margin-top: 30px;
@@ -185,6 +202,7 @@ input.valid {
 .bottom-links:last-child {
   font-size: 1rem;
   font-weight: 600;
+  margin-bottom: 20px;
 }
 
 .bottom-links a {
